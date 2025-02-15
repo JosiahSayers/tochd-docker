@@ -21,3 +21,5 @@ Using the options from the previous command you can change the behavior of tochd
 ```bash
 docker run --volume <YOUR/CURRENT/GAME/LIBRARY>:/in --volume <FINAL/CHD/DIRECTORY>:/out -e TOCHD_ARGS="-m auto -q -p -t 4" josiahsayers15/tochd
 ```
+
+This image adds additional functionality that is not in the tochd program. On startup it will compare the input and output directories and skip any files that already exist in the output directory. This makes it so that if the container ever stops running you will be able to resume the conversion by simply running the container again. Tochd on it's own does not include functionality like this and will simply start over, overwriting every file that already exists in your output directory.
