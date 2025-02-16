@@ -12,6 +12,6 @@ const remainingInputFiles = inputFiles.filter(inputFile => {
   const fileExtension = extname(inputFile);
   const withoutExtension = inputFile.replace(fileExtension, '');
   return !outputFiles.includes(withoutExtension);
-});
+}).sort();
 
 console.log(remainingInputFiles.join('\n'));
